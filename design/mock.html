@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta charset='utf-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <meta
+            name='description'
+            content='Web app for counting words, lines, and characters'
+    />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel='icon' href='../public/favicon.ico'/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../public/favicon-16x16.png">
+    <link rel='apple-touch-icon' sizes="180x180" href='../public/apple-touch-icon.png'/>
+    <link rel="mask-icon" href="../public/safari-pinned-tab.svg" color="#ef5350">
+    <link rel='manifest' href='../public/manifest.json'/>
+
+    <link href='mock.css' rel='stylesheet'>
+    <link href='../src/index.css' rel='stylesheet'>
+
+    <title>Word Counter</title>
+</head>
+<body>
+    <div class='app'>
+        <main class='layout'>
+            <section class='info-section'>
+                <div class='count-metrics'>
+                    <p class='count-metric'>
+                        Paragraphs:
+                        <span>2</span>
+                    </p>
+                    <p class='count-metric'>
+                        Sentences:
+                        <span>7</span>
+                    </p>
+                    <p class='count-metric'>
+                        Words:
+                        <span>56</span>
+                    </p>
+                    <p class='count-metric'>
+                        Characters:
+                        <span>293</span>
+                    </p>
+                </div>
+            </section>
+
+            <label class='user-input-layout'>
+                <span>Enter your text here</span>
+                <textarea class='user-input'></textarea>
+            </label>
+        </main>
+    </div>
+</body>
+</html>

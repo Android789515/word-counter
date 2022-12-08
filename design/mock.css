@@ -1,0 +1,82 @@
+body {
+    /* Comment out rule for light theme */
+
+    color: #efefef;
+
+    background: #333;
+}
+
+.app {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.layout {
+    font-size: 1.4rem;
+
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) 50vw minmax(1em, 1fr);
+    grid-row-gap: 1.5em;
+}
+
+.layout > * {
+    grid-column: 2 / -2;
+}
+
+/* ======================= */
+
+.info-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.count-metrics {
+    display: grid;
+    grid-row-gap: .5em;
+
+    width: max-content;
+
+    padding-bottom: .75em;
+    border-bottom: solid;
+}
+
+.count-metric {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 1em;
+    justify-content: space-between;
+
+    margin: 0;
+}
+
+.analytics button {
+    cursor: pointer;
+}
+
+/* ======================= */
+
+.user-input-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-input {
+    resize: vertical;
+
+    height: 11.25em;
+
+    background: #cbcbcb;
+    padding: .75em;
+
+    border: none;
+    border-radius: .25em;
+
+    margin: 1em 0;
+}
+
+.user-input:focus {
+    outline: solid 2px #3278CC;
+}
