@@ -8,18 +8,19 @@ body {
 
 .app {
     display: grid;
-    justify-content: center;
     align-items: center;
 
     min-height: 100vh;
 }
 
 .layout {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 
     display: grid;
-    grid-template-columns: minmax(1em, 1fr) 50vw minmax(1em, 1fr);
+    grid-template-columns: minmax(1em, 1fr) auto minmax(1em, 1fr);
     grid-row-gap: 1.5em;
+
+    width: 100%;
 }
 
 .layout > * {
@@ -28,16 +29,9 @@ body {
 
 /* ======================= */
 
-.info-section {
-    display: flex;
-    justify-content: space-between;
-}
-
 .count-metrics {
     display: grid;
     grid-row-gap: .5em;
-
-    width: max-content;
 
     padding-bottom: .75em;
     border-bottom: solid;
@@ -52,10 +46,6 @@ body {
     margin: 0;
 }
 
-.analytics button {
-    cursor: pointer;
-}
-
 /* ======================= */
 
 .user-input-layout {
@@ -64,9 +54,14 @@ body {
 }
 
 .user-input {
+    font-size: 1rem;
+
     resize: vertical;
 
-    height: 11.25em;
+    width: 85vw;
+    max-width: 25.78125em;
+
+    min-height: 9.25em;
 
     background: #cbcbcb;
     padding: .75em;
@@ -79,4 +74,38 @@ body {
 
 .user-input:focus {
     outline: solid 2px #3278CC;
+}
+
+/*
+    Breakpoints
+    ===========
+
+    23.125em
+    25.78125em - Max user input size at small screens
+    46.25em
+*/
+
+@media (min-width: 23.125em) {
+    .count-metrics {
+        width: max-content;
+    }
+}
+
+/* 25.78125em = max user input size */
+@media (min-width: 25.78125em) {
+    .user-input {
+        height: 11.25em;
+    }
+}
+
+@media (min-width: 46.25em) {
+    .layout {
+        font-size: 1.4rem;
+    }
+
+    .user-input {
+        font-size: inherit;
+
+        max-width: 33.816964285714285em;
+    }
 }
