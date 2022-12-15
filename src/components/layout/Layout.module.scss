@@ -5,6 +5,8 @@
 .layout {
   font-size: 1.3rem;
 
+  align-self: center;
+
   display: grid;
   grid-template-columns: minmax(1em, 1fr) auto minmax(1em, 1fr);
   grid-row-gap: 1.5em;
