@@ -8,13 +8,14 @@ body {
 
 .app {
     display: grid;
-    align-items: center;
 
     min-height: 100vh;
 }
 
 .layout {
     font-size: 1.3rem;
+
+    align-self: center;
 
     display: grid;
     grid-template-columns: minmax(1em, 1fr) auto minmax(1em, 1fr);
