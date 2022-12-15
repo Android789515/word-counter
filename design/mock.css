@@ -1,9 +1,12 @@
 body {
-    /* Comment out rule for light theme */
+    /* Dark Theme */
 
     color: #efefef;
 
     background: #333;
+
+    /* Light Theme */
+    /* background: #f1f1f1; */
 }
 
 .app {
@@ -54,15 +57,21 @@ body {
 
 .user-input {
     font-size: 1rem;
+    color: #333;
 
     resize: vertical;
+
+    /* Light Theme */
+    /* box-shadow: 0 0 2px rgba(51, 51, 51, .5); */
 
     width: 85vw;
     max-width: 25.78125em;
 
     min-height: 9.25em;
 
+    /* Dark Theme */
     background: #cbcbcb;
+    /* =============== */
     padding: .75em;
 
     border: none;
