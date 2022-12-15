@@ -1,3 +1,4 @@
+export type LabelText = string;
 export type FormText = string;
 
 type NewFormText = FormText;
