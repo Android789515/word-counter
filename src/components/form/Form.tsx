@@ -1,14 +1,15 @@
-import type { FormText, updateFormText } from './formTypes';
+import type { LabelText, FormText, updateFormText } from './formTypes';
 
 interface Props {
+    labelText?: LabelText;
     formText: FormText;
     updateFormText: updateFormText;
 }
 
-const Form = ({ formText, updateFormText }: Props) => {
+const Form = ({ labelText, formText, updateFormText }: Props) => {
     return (
         <label>
-            Enter text here:
+            {labelText}
 
             <textarea
                 value={formText}
