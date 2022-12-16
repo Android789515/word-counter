@@ -75,7 +75,7 @@ body {
     padding: .75em;
 
     border: none;
-    border-radius: .25em;
+    border-radius: .5em;
 }
 
 .user-input:focus {
