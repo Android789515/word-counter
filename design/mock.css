@@ -51,8 +51,8 @@ body {
 /* ======================= */
 
 .user-input-layout {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-row-gap: .5em;
 }
 
 .user-input {
@@ -76,8 +76,6 @@ body {
 
     border: none;
     border-radius: .25em;
-
-    margin: 1em 0;
 }
 
 .user-input:focus {

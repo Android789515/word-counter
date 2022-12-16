@@ -1,6 +1,6 @@
 .formLayoutDefaults {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-row-gap: .5em;
 }
 
 .formDefaults {
