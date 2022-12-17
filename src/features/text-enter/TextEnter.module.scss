@@ -1,0 +1,29 @@
+@use 'sass:map';
+
+@use 'components/layout';
+
+.textEnterLayout {
+  display: grid;
+  grid-row-gap: .5em;
+}
+
+.textEnterForm {
+  width: 85vw;
+  max-width: 25.78125em;
+
+  min-height: 9.25em;
+}
+
+@media (min-width: map.get(layout.$breakpoints, 'increaseTextFieldSize')) {
+  .textEnterForm {
+    height: 11.25em;
+  }
+}
+
+@media (min-width: map.get(layout.$breakpoints, 'scaleUpUI')) {
+  .textEnterForm {
+    font-size: inherit;
+
+    max-width: 33.816964285714285em;
+  }
+}
