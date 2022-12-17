@@ -6,12 +6,10 @@ interface Props {
     children: ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+export const Layout = ({ children }: Props) => {
     return (
         <main className={styles.layout}>
             {children}
         </main>
     );
 };
-
-export default Layout;

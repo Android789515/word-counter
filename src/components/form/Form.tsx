@@ -9,7 +9,7 @@ interface Props {
     updateFormText: updateFormText;
 }
 
-const Form = ({ styleClasses, labelText, formText, updateFormText }: Props) => {
+export const Form = ({ styleClasses, labelText, formText, updateFormText }: Props) => {
     // Extracted for readability
     const layout = styleClasses?.layoutClass || styles.formLayoutDefaults;
 
@@ -28,5 +28,3 @@ const Form = ({ styleClasses, labelText, formText, updateFormText }: Props) => {
         </label>
     );
 };
-
-export default Form;
