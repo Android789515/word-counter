@@ -1,0 +1,19 @@
+@use 'sass:map';
+
+@use 'components/layout';
+
+.metrics {
+  font-variant-numeric: tabular-nums;
+
+  display: grid;
+  grid-row-gap: .5em;
+
+  padding-bottom: .75em;
+  border-bottom: solid;
+}
+
+@media (min-width: map.get(layout.$breakpoints, 'limitMetricsSize')) {
+  .metrics {
+    width: max-content;
+  }
+}
