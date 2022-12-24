@@ -1,12 +1,13 @@
-import { useState } from 'react';
-
-import { FormText, Form } from 'components/form';
+import { FormText, UpdateFormText, Form } from 'components/form';
 
 import styles from './TextEnter.module.scss';
 
-export const TextEnter = () => {
-    const [ formText, updateFormText ] = useState<FormText>('');
+interface Props {
+    userInput: FormText;
+    updateUserInput: UpdateFormText;
+}
 
+export const TextEnter = ({ userInput, updateUserInput }: Props) => {
     return (
         <Form
             styleClasses={{
