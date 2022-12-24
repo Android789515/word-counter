@@ -1,7 +1,6 @@
 import { screen, render } from '@testing-library/react';
 
 import type { Info } from 'components/info-group';
-import { String } from 'utils/primitives';
 
 import { Metrics } from './Metrics';
 
@@ -23,22 +22,5 @@ describe('Metrics', () => {
         const MetricElements = screen.getAllByRole('listitem');
 
         expect(MetricElements).toHaveLength(4);
-    });
-
-    it('Displays the correct information for each piece of info passed to it', () => {
-        render(
-            <Metrics
-                metrics={metrics}
-            />
-        );
-
-        const MetricElements = screen.getAllByRole('listitem');
-
-        const renderedInfo = MetricElements.map(element => {
-            const [ description, value ] = element.textContent!.split(':').map(String.trim);
-            return { description, value };
-        });
-
-        expect(renderedInfo).toEqual(metrics);
     });
 });
