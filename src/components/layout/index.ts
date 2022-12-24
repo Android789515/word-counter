@@ -1,1 +1,1 @@
-export * from './Layout.module.scss';
+export * from './Layout';
