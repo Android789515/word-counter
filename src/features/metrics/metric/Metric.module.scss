@@ -1,0 +1,15 @@
+.metric {
+  display: grid;
+
+  $descriptionSpace: 3.4em;
+  $colonSpace: 2ch;
+  $valueSpace: auto;
+
+  grid-template-columns: $descriptionSpace $colonSpace $valueSpace;
+
+  margin: 0;
+}
+
+.metricValue {
+  justify-self: end;
+}

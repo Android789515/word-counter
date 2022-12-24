@@ -1,4 +1,7 @@
 import { Info, InfoGroup } from 'components/info-group';
+import { Metric } from './metric/Metric';
+
+import styles from './Metrics.module.scss';
 
 interface Props {
     metrics: Info[]
@@ -7,15 +10,13 @@ interface Props {
 export const Metrics = ({ metrics }: Props) => {
     return (
         <InfoGroup
-            styleClass={''}
+            styleClass={styles.metrics}
             infoToDisplay={metrics}
-            renderInfoComponent={({ description, value }) => {
-                return (
-                    <li>
-                        {description}: {value}
-                    </li>
-                );
-            }}
+            renderInfoComponent={metric => (
+                <Metric
+                    metric={metric}
+                />
+            )}
         />
     );
 };
