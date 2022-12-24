@@ -1,4 +1,4 @@
-import type { FormClasses, LabelText, FormText, updateFormText } from './formTypes';
+import type { FormClasses, LabelText, FormText, UpdateFormText } from './formTypes';
 
 import styles from './Form.module.scss';
 
@@ -6,7 +6,7 @@ interface Props {
     styleClasses?: FormClasses;
     labelText?: LabelText;
     formText: FormText;
-    updateFormText: updateFormText;
+    updateFormText: UpdateFormText;
 }
 
 export const Form = ({ styleClasses, labelText, formText, updateFormText }: Props) => {

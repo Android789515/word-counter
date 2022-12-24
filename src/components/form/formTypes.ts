@@ -9,4 +9,4 @@ export type LabelText = string;
 export type FormText = string;
 
 type NewFormText = FormText;
-export type updateFormText = (newFormText: NewFormText) => void; // Does state updates
+export type UpdateFormText = (newFormText: NewFormText) => void; // Does state updates
