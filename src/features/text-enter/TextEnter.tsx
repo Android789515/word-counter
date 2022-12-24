@@ -15,8 +15,8 @@ export const TextEnter = ({ userInput, updateUserInput }: Props) => {
                 textFieldClass: styles.textEnterForm
             }}
             labelText={'Enter Text Here: '}
-            formText={formText}
-            updateFormText={updateFormText}
+            formText={userInput}
+            updateFormText={updateUserInput}
         />
     );
 };
