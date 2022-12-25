@@ -3,6 +3,9 @@ export const String = {
         const capitalizedFirstLetter = string[0].toUpperCase();
 
         return capitalizedFirstLetter + string.slice(1);
+    },
+    isNotEmpty(string: string) {
+        return string !== '';
     }
 }
 
