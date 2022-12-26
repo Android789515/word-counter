@@ -1,0 +1,82 @@
+@use 'sass:map';
+
+@use 'components/layout';
+
+// Default styling
+.toggleSwitch {
+  font: inherit;
+  color: inherit;
+
+  cursor: pointer;
+
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.toggleSwitch {
+  justify-self: end;
+
+  display: grid;
+  grid-template: 100% / 100%;
+
+  aspect-ratio: 2 / 1;
+
+  width: 3em;
+  padding: .25em;
+
+  border-radius: 50px;
+}
+
+.toggleSwitchKnob {
+  display: inline-block;
+
+  aspect-ratio: 1 / 1;
+
+  height: 100%;
+
+  border-radius: 100%;
+
+  transform: rotateX(0);
+  transition: transform 250ms, margin-left 250ms;
+}
+
+.toggleSwitch:active .toggleSwitchKnob {
+  transform: rotateX(25deg);
+}
+
+.toggleSwitchKnobLeft {
+  margin-left: 0;
+}
+
+.toggleSwitchKnobRight {
+  margin-left: 1.5em;
+}
+
+@media (min-width: map.get(layout.$breakpoints, 'scaleUpUI')) {
+  .toggleSwitch {
+    width: 6em;
+
+    padding: .5em;
+  }
+
+  .toggleSwitchKnobRight {
+    margin-left: 3em;
+  }
+}
+
+.toggleSwitchLight {
+  background: #333;
+
+  .toggleSwitchKnob {
+    background: #fff;
+  }
+}
+
+.toggleSwitchDark {
+  background: #fff;
+
+  .toggleSwitchKnob {
+    background: #333;
+  }
+}
