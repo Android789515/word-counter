@@ -2,22 +2,30 @@ import type { FormText } from 'components/form';
 import type { MetricsData } from '../metricTypes';
 import { String } from 'utils/primitives';
 
+type Paragraph = string;
+type Splitter = (paragraph: Paragraph) => Paragraph[] | Paragraph;
+
+const measure = (paragraphs: Paragraph[]) => (splitter: Splitter) => {
+    return paragraphs.reduce((total, paragraph) => {
+
+        return total + splitter(paragraph).length;
+    }, 0);
+};
+
 export const getMetrics = (userInput: FormText): MetricsData => {
     const paragraphs = userInput.split('\n');
 
-    type Paragraph = string;
-    const measure = (splitter: (paragraph: Paragraph) => string | string[]) => {
-        return paragraphs.reduce((total, paragraph) => {
+    const measureParagraph = measure(paragraphs);
 
-            return total + splitter(paragraph).length;
-        }, 0);
-    };
+    const sentences = measureParagraph(paragraph => {
+        return paragraph.split('.').filter(String.isNotEmpty);
+    });
 
-    const sentences = measure(paragraph => paragraph.split('.').filter(String.isNotEmpty));
+    const words = measureParagraph(paragraph => {
+        return paragraph.split(' ');
+    });
 
-    const words = measure(paragraph => paragraph.split(' '));
-
-    const letters = measure(paragraph => paragraph);
+    const letters = measureParagraph(paragraph => paragraph);
 
     return {
         paragraphs: paragraphs.length,
