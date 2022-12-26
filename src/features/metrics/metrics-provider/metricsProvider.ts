@@ -1,14 +1,8 @@
 import type { FormText } from 'components/form';
+import type { MetricsData } from '../metricTypes';
 import { String } from 'utils/primitives';
 
-interface UserInputMetrics {
-    paragraphs: number;
-    sentences: number;
-    words: number;
-    letters: number;
-}
-
-export const getMetrics = (userInput: FormText): UserInputMetrics => {
+export const getMetrics = (userInput: FormText): MetricsData => {
     const paragraphs = userInput.split('\n');
 
     type Paragraph = string;
