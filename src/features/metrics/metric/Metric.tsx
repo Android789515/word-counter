@@ -1,9 +1,9 @@
-import type { Info } from 'components/info-group';
+import type { MetricInfo } from '../metricTypes';
 
 import styles from './Metric.module.scss';
 
 interface Props {
-    metric: Info;
+    metric: MetricInfo;
 }
 
 export const Metric = ({ metric: { description, value } }: Props) => {
