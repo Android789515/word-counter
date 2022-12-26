@@ -3,9 +3,7 @@ export enum Themes {
     light
 }
 
-interface _ThemeProvider {
-    theme: Themes;
+export interface ThemeContext {
+    isLightTheme: () => boolean;
     toggleTheme: () => void;
 }
-
-export type ThemeContext = _ThemeProvider | {};
