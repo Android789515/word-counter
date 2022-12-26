@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 
 import './index.css';
 
+import { ThemeProvider } from 'providers/theme-provider';
 import App from './App';
 
 const root = ReactDOM.createRoot(
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+        <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
