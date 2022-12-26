@@ -5,5 +5,6 @@ export enum Themes {
 
 export interface ThemeContext {
     isLightTheme: () => boolean;
+    isDarkTheme: () => boolean;
     toggleTheme: () => void;
 }

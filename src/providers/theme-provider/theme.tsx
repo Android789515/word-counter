@@ -4,6 +4,7 @@ import { ThemeContext, Themes } from './themeTypes';
 
 const themeContext = createContext<ThemeContext>({
     isLightTheme: () => true,
+    isDarkTheme: () => false,
     toggleTheme: () => {}
 });
 
@@ -15,6 +16,7 @@ const ThemeProvider = ({ children }: Props) => {
     const [ theme, setTheme ] = useState<Themes>(Themes.light);
 
     const isLightTheme = () => theme === Themes.light;
+    const isDarkTheme = () => theme === Themes.dark;
 
     const toggleTheme = () => setTheme(prevTheme => {
         if (prevTheme === Themes.light) {
@@ -25,7 +27,7 @@ const ThemeProvider = ({ children }: Props) => {
     });
 
     return (
-        <themeContext.Provider value={{ isLightTheme, toggleTheme }}>
+        <themeContext.Provider value={{ isLightTheme, isDarkTheme, toggleTheme }}>
             {children}
         </themeContext.Provider>
     );
