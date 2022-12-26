@@ -1,5 +1,7 @@
 .app {
   display: grid;
+  grid-auto-rows: 6em auto;
+  grid-row-gap: 2em;
 
   min-height: 100vh;
 
