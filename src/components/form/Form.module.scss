@@ -14,5 +14,6 @@
   padding: .75em;
 
   border: none;
-  border-radius: .5em;
+  $radius: .5em;
+  border-radius: $radius $radius 0 $radius;
 }
