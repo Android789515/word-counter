@@ -1,7 +1,7 @@
 import { Number, String } from 'utils/primitives';
 
 import type { MetricsData } from './metricTypes';
-import { Metric } from './metric/Metric';
+import { Metric } from './metric';
 
 import styles from './Metrics.module.scss';
 
