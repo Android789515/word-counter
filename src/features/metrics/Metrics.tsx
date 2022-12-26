@@ -1,4 +1,4 @@
-import { Number, String } from 'utils/primitives';
+import { Number as Num, String } from 'utils/primitives';
 
 import type { MetricsData } from './metricTypes';
 import { Metric } from './metric';
@@ -11,12 +11,12 @@ interface Props {
 
 export const Metrics = ({ metrics }: Props) => {
     const MetricComponents = Object.entries(metrics).map((metric, index) => {
-        const [ description, value ] = metric.map(Number.toString).map(String.capitalize);
+        const [ description, value ] = metric.map(Num.toString).map(String.capitalize);
 
         return (
             <Metric
                 key={index}
-                metric={{ description, value }}
+                metric={{ description, value: Number(value) }}
             />
         );
     });
