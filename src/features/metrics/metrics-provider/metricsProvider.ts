@@ -13,7 +13,7 @@ const measure = (paragraphs: Paragraph[]) => (splitter: Splitter) => {
 };
 
 export const getMetrics = (userInput: FormText): MetricsData => {
-    const paragraphs = userInput.split('\n');
+    const paragraphs = userInput.split('\n').filter(String.isNotEmpty);
 
     const measureParagraph = measure(paragraphs);
 
@@ -22,7 +22,7 @@ export const getMetrics = (userInput: FormText): MetricsData => {
     });
 
     const words = measureParagraph(paragraph => {
-        return paragraph.split(' ');
+        return paragraph.split(' ').filter(String.isNotEmpty);
     });
 
     const letters = measureParagraph(paragraph => paragraph);
