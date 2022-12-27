@@ -14,7 +14,7 @@ export const TextEnter = ({ userInput, updateUserInput }: Props) => {
                 layoutClass: styles.textEnterLayout,
                 textFieldClass: styles.textEnterForm
             }}
-            labelText={'Enter Text Here: '}
+            labelText={'Enter Text Here:'}
             formText={userInput}
             updateFormText={updateUserInput}
         />
