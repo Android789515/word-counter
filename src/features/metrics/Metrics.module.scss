@@ -21,7 +21,7 @@
   border-bottom: solid;
 }
 
-@media (min-width: map.get(layout.$breakpoints, 'limitMetricsSize')) {
+@media (min-width: map.get(layout.$breakpoints, limitMetricsSize)) {
   .metrics {
     width: max-content;
   }

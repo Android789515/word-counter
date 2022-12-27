@@ -14,13 +14,13 @@
   min-height: 9.25em;
 }
 
-@media (min-width: map.get(layout.$breakpoints, 'increaseTextFieldSize')) {
+@media (min-width: map.get(layout.$breakpoints, increaseTextFieldSize)) {
   .textEnterForm {
     height: 11.25em;
   }
 }
 
-@media (min-width: map.get(layout.$breakpoints, 'scaleUpUI')) {
+@media (min-width: map.get(layout.$breakpoints, scaleUpUI)) {
   .textEnterForm {
     font-size: inherit;
 
