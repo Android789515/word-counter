@@ -53,7 +53,9 @@ export const ToggleSwitch = ({ isInitiallyToggledOn = false, icon, whenToggledOn
                     ${knobPosition}
                 `}
             >
-                {icon}
+                <div className={styles.toggleSwitchKnobIcon}>
+                    {icon}
+                </div>
             </span>
         </button>
     );

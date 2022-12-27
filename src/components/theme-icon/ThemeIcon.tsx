@@ -11,10 +11,7 @@ export const ThemeIcon = ({ isDarkTheme }: Props) => {
         <img
             src={isDarkTheme ? moonIcon : sunIcon}
             alt={'Theme Icon'}
-            className={`
-                ${styles.themeIcon}
-                ${isDarkTheme ? styles.themeIconDark : styles.themeIconLight}
-            `}
+            className={isDarkTheme ? styles.themeIconDark : styles.themeIconLight}
         />
     );
 };
