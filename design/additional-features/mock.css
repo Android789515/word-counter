@@ -3,15 +3,15 @@
 
     /* Dark Theme */
 
-    /* color: #efefef; */
+    color: #efefef;
 
     min-height: 100vh;
 
     /* Dark Theme */
-    /* background: #333; */
+    background: #333;
 
     /* Light Theme */
-    background: #f3f3f9;
+    /* background: #f3f3f9; */
 }
 
 .layout {
@@ -75,7 +75,7 @@
     min-height: 9.25em;
 
     /* Dark Theme */
-    /* background: #cbcbcb; */
+    background: #e8e8e8;
     /* =============== */
     padding: .75em;
 

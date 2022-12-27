@@ -1,0 +1,53 @@
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='description' content='Web app for counting words characters, and more.'>
+    <meta name='msapplication-TileColor' content='#da532c'>
+    <meta name='theme-color' content='#ffffff'>
+
+    <link rel='icon' href='%PUBLIC_URL%/favicon/favicon.ico'>
+    <link rel='icon' type='image/png' sizes='32x32' href='%PUBLIC_URL%/favicon/favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='%PUBLIC_URL%/favicon/favicon-16x16.png'>
+    <link rel='apple-touch-icon' sizes='180x180' href='%PUBLIC_URL%/favicon/apple-touch-icon.png'>
+    <link rel='mask-icon' href='%PUBLIC_URL%/favicon/safari-pinned-tab.svg' color='#ef5350'>
+
+    <link rel='manifest' href='%PUBLIC_URL%/manifest.json'>
+
+    <link href='mock.css' rel='stylesheet'>
+    <link href='../../src/index.css' rel='stylesheet'>
+
+    <title>Word Counter</title>
+</head>
+<body>
+    <div class='app'>
+        <main class='layout'>
+            <section class='info-section'>
+                <ul class='count-metrics'>
+                    <li class='count-metric'>
+                        Paragraphs:
+                        <span>2</span>
+                    </li>
+                    <li class='count-metric'>
+                        Sentences:
+                        <span>7</span>
+                    </li>
+                <li class='count-metric'>
+                    Words:
+                    <span>56</span>
+                </li>
+                <li class='count-metric'>
+                    Characters:
+                    <span>293</span>
+                </li>
+            </ul>
+        </section>
+
+        <label class='user-input-layout'>
+            Enter your text here:
+            <textarea class='user-input'></textarea>
+        </label>
+    </main>
+</div>
+</body>
+</html>
