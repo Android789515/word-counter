@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { getMetrics } from './metricsProvider';
+import { getMetrics } from './metrics-utils';
 
 const fakeUserInput = () => {
     return (
@@ -22,7 +22,7 @@ const fakeUserInput = () => {
     );
 };
 
-describe('metricsProvider', () => {
+describe('metrics-utils', () => {
     it('Provides an accurate metric measuring the number of paragraphs in the user input', () => {
         const { result } = renderHook(() => getMetrics(fakeUserInput()));
         const { paragraphs } = result.current;
