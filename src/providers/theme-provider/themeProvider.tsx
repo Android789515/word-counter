@@ -1,11 +1,13 @@
 import { ReactNode, createContext, useState } from 'react';
 
 import { ThemeContext, Themes } from './themeTypes';
+import { ThemeIcon } from 'components/theme-icon';
 
 const themeContext = createContext<ThemeContext>({
     isLightTheme: () => true,
     isDarkTheme: () => false,
-    toggleTheme: () => {}
+    toggleTheme: () => {},
+    getThemeIcon: () => null
 });
 
 interface Props {
@@ -26,8 +28,19 @@ const ThemeProvider = ({ children }: Props) => {
         }
     });
 
+    const getThemeIcon = () => (
+        <ThemeIcon
+            isDarkTheme={isDarkTheme()}
+        />
+    );
+
     return (
-        <themeContext.Provider value={{ isLightTheme, isDarkTheme, toggleTheme }}>
+        <themeContext.Provider value={{
+            isLightTheme,
+            isDarkTheme,
+            toggleTheme,
+            getThemeIcon
+        }}>
             {children}
         </themeContext.Provider>
     );
