@@ -9,11 +9,12 @@ type ToggleOffFunction = () => void;
 
 interface Props {
     isInitiallyToggledOn?: boolean;
+    icon?: JSX.Element | null;
     whenToggledOn: ToggleOnFunction;
     whenToggledOff: ToggleOffFunction;
 }
 
-export const ToggleSwitch = ({ isInitiallyToggledOn = false, whenToggledOn, whenToggledOff }: Props) => {
+export const ToggleSwitch = ({ isInitiallyToggledOn = false, icon, whenToggledOn, whenToggledOff }: Props) => {
     const { isLightTheme } = useContext(themeContext);
 
     const switchBackground = isLightTheme()
@@ -51,7 +52,9 @@ export const ToggleSwitch = ({ isInitiallyToggledOn = false, whenToggledOn, when
                     ${styles.toggleSwitchKnob}
                     ${knobPosition}
                 `}
-            />
+            >
+                {icon}
+            </span>
         </button>
     );
 };
