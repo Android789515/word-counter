@@ -1,0 +1,122 @@
+.app {
+    display: grid;
+
+    /* Dark Theme */
+
+    /* color: #efefef; */
+
+    min-height: 100vh;
+
+    /* Dark Theme */
+    /* background: #333; */
+
+    /* Light Theme */
+    background: #f3f3f9;
+}
+
+.layout {
+    font-size: 1.3rem;
+
+    align-self: center;
+
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) auto minmax(1em, 1fr);
+    grid-row-gap: 1.5em;
+}
+
+.layout > * {
+    grid-column: 2 / -2;
+}
+
+/* ======================= */
+
+/* Un-styling */
+.count-metrics {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+.count-metrics {
+    display: grid;
+    grid-row-gap: .5em;
+
+    padding-bottom: .75em;
+    border-bottom: solid;
+}
+
+.count-metric {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 1em;
+    justify-content: space-between;
+
+    margin: 0;
+}
+
+/* ======================= */
+
+.user-input-layout {
+    display: grid;
+    grid-row-gap: .5em;
+}
+
+.user-input {
+    font-size: 1rem;
+    color: #333;
+
+    resize: vertical;
+
+    width: 85vw;
+    max-width: 25.78125em;
+
+    min-height: 9.25em;
+
+    /* Dark Theme */
+    /* background: #cbcbcb; */
+    /* =============== */
+    padding: .75em;
+
+    border: none;
+    border-radius: .5em;
+}
+
+.user-input:focus {
+    outline: solid 2px #3278cc;
+}
+
+/*
+    Breakpoints
+    ===========
+
+    23.125em
+    25.78125em - Max user input size at small screens
+    46.25em
+*/
+
+@media (min-width: 23.125em) {
+    .count-metrics {
+        width: max-content;
+    }
+}
+
+/* 25.78125em = max user input size */
+@media (min-width: 25.78125em) {
+    .user-input {
+        height: 11.25em;
+    }
+}
+
+@media (min-width: 46.25em) {
+    .layout {
+        font-size: 1.4rem;
+    }
+
+    .user-input {
+        font-size: inherit;
+
+        max-width: 33.816964285714285em;
+    }
+}
