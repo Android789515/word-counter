@@ -2,7 +2,6 @@
     display: grid;
 
     /* Dark Theme */
-
     color: #efefef;
 
     min-height: 100vh;
@@ -28,15 +27,27 @@
     grid-column: 2 / -2;
 }
 
-/* ======================= */
-
 /* Un-styling */
-.count-metrics {
+.unstyled-ul {
     list-style: none;
 
     padding: 0;
 
     margin: 0;
+}
+
+.button-defaults {
+    font: inherit;
+
+    cursor: pointer;
+}
+
+/* ======================= */
+
+.info-section {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 2em;
 }
 
 .count-metrics {
@@ -54,6 +65,23 @@
     justify-content: space-between;
 
     margin: 0;
+}
+
+.git-checks-layout {
+    display: none;
+}
+
+.check-message {
+    font-size: 1rem;
+
+    justify-self: end;
+    align-self: start;
+
+    max-width: max-content;
+}
+
+.git-checks {
+    display: grid;
 }
 
 /* ======================= */
@@ -93,12 +121,13 @@
 
     23.125em
     25.78125em - Max user input size at small screens
+    30.375em
     46.25em
 */
 
 @media (min-width: 23.125em) {
-    .count-metrics {
-        width: max-content;
+    .info-section {
+        grid-template-columns: max-content auto;
     }
 }
 
@@ -109,9 +138,33 @@
     }
 }
 
+@media (min-width: 30.375em) {
+    .git-checks-layout-visible {
+        display: grid;
+        grid-template-rows: max-content auto;
+
+        border: solid 1px;
+        border-radius: .25em;
+    }
+
+    .git-checks {
+        padding-left: 1em;
+    }
+}
+
 @media (min-width: 46.25em) {
     .layout {
         font-size: 1.4rem;
+    }
+
+    .git-checks-layout-visible {
+        justify-self: end;
+
+        width: 75%;
+    }
+
+    .git-checks {
+        padding-bottom: .5em;
     }
 
     .user-input {
