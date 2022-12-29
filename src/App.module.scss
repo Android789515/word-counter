@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+@use 'color-palette';
 @use 'components/layout';
 
 .app {
@@ -9,13 +10,13 @@
 
   min-height: 100vh;
 
-  background: #f3f3f9;
+  background: map.get(color-palette.$colors, 'dropWhiteBackground');
 }
 
 .appDark {
-  color: #efefef;
+  color: map.get(color-palette.$colors, 'dimWhite');
 
-  background: #333;
+  background: map.get(color-palette.$colors, 'dimBlack');
 }
 
 @media (min-width: map.get(layout.$breakpoints, scaleUpUI)) {

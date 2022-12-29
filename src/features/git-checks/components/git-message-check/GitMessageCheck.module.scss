@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+@use 'color-palette';
 @use 'components/layout';
 
 .gitMessageCheck {
@@ -15,11 +16,11 @@
 }
 
 .pass {
-  filter: invert(77%) sepia(85%) saturate(2626%) hue-rotate(58deg) brightness(99%) contrast(101%);
+  filter: map.get(color-palette.$recolorBlackSVG, 'green');
 }
 
 .fail {
-  filter: invert(16%) sepia(79%) saturate(3597%) hue-rotate(349deg) brightness(102%) contrast(105%);
+  filter: map.get(color-palette.$recolorBlackSVG, 'red');
 }
 
 @media (min-width: map.get(layout.$breakpoints, scaleUpUI)) {

@@ -1,3 +1,7 @@
+@use 'sass:map';
+
+@use 'color-palette';
+
 .formLayoutDefaults {
   display: grid;
   grid-row-gap: .5em;
@@ -5,7 +9,7 @@
 
 .formDefaults {
   font-size: 1rem;
-  color: #333;
+  color: map.get(color-palette.$colors, 'dimBlack');
 
   resize: vertical;
 
@@ -19,5 +23,5 @@
 }
 
 .formDefaultsDark {
-  background: #e8e8e8;
+  background: map.get(color-palette.$colors, 'dimmerWhite');
 }

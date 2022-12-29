@@ -1,7 +1,11 @@
+@use 'sass:map';
+
+@use 'color-palette';
+
 .themeIconLight {
-  filter: invert(19%) sepia(0%) saturate(75%) hue-rotate(177deg) brightness(88%) contrast(89%);
+  filter: map.get(color-palette.$recolorBlackSVG, 'dimBlack');
 }
 
 .themeIconDark {
-  filter: invert(1);
+  filter: map.get(color-palette.$recolorBlackSVG, 'white');
 }
