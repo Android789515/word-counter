@@ -11,7 +11,7 @@ interface Props {
 export const GitChecks = ({ metrics }: Props) => {
     return (
         <div className={styles.gitChecksLayout}>
-            <CheckMessageButton/>
+            <CheckMessageButton />
 
             <ul className={styles.gitChecks}>
                 <li>Title</li>
