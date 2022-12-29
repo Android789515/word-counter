@@ -1,8 +1,15 @@
 import styles from './CheckMessageButton.module.scss';
 
-export const CheckMessageButton = () => {
+interface Props {
+    onClick(): void;
+}
+
+export const CheckMessageButton = ({ onClick }: Props) => {
     return (
-        <button className={styles.checkMessageButton}>
+        <button
+            className={styles.checkMessageButton}
+            onClick={onClick}
+        >
             Check
         </button>
     );

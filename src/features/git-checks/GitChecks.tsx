@@ -14,7 +14,9 @@ export const GitChecks = ({ metrics }: Props) => {
 
     return (
         <div className={styles.gitChecksLayout}>
-            <CheckMessageButton />
+            <CheckMessageButton
+                onClick={toggleShown}
+            />
 
             <ul className={isShown ? styles.gitChecks : styles.gitChecksHidden}>
                 <li>Title</li>
