@@ -1,15 +1,15 @@
 $colors: (
-        'white': #fff,
-        'dropWhiteBackground': #f3f3f9,
-        'dimWhite': #efefef,
-        'dimmerWhite': #e8e8e8,
-        'dimmestWhite': #cbcbcb,
-        'dimBlack': #333
+    'white': #fff,
+    'dropWhiteBackground': #f3f3f9,
+    'dimWhite': #efefef,
+    'dimmerWhite': #e8e8e8,
+    'dimmestWhite': #cbcbcb,
+    'dimBlack': #333
 );
 
 $recolorBlackSVG: (
-        'white': invert(1),
-        'dimBlack': invert(19%) sepia(0%) saturate(75%) hue-rotate(177deg) brightness(88%) contrast(89%),
-        'green': invert(77%) sepia(85%) saturate(2626%) hue-rotate(58deg) brightness(99%) contrast(101%),
-        'red': invert(16%) sepia(79%) saturate(3597%) hue-rotate(349deg) brightness(102%) contrast(105%)
+    'white': invert(1),
+    'dimBlack': invert(19%) sepia(0%) saturate(75%) hue-rotate(177deg) brightness(88%) contrast(89%),
+    'green': invert(77%) sepia(85%) saturate(2626%) hue-rotate(58deg) brightness(99%) contrast(101%),
+    'red': invert(16%) sepia(79%) saturate(3597%) hue-rotate(349deg) brightness(102%) contrast(105%)
 );
