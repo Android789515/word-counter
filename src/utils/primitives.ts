@@ -4,10 +4,17 @@ export const Str = {
 
         return capitalizedFirstLetter + string.slice(1);
     },
+    isCapitalized(string: string) {
+        const firstLetter = string.charAt(0);
+        return (
+            this.isNotEmpty(string)
+            && firstLetter === firstLetter.toUpperCase()
+        );
+    },
     isNotEmpty(string: string) {
         return string !== '';
     }
-}
+};
 
 export const Num = {
     toString(number: number) {
