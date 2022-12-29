@@ -1,0 +1,37 @@
+@use 'sass:map';
+
+@use 'components/layout';
+
+.gitChecksLayout {
+  display: none;
+}
+
+.gitChecks {
+  display: grid;
+}
+
+@media (min-width: map.get(layout.$breakpoints, unlockThemeSwitch)) {
+  .gitChecksLayout {
+    display: grid;
+    grid-template-rows: max-content auto;
+
+    border: solid 1px;
+    border-radius: .25em;
+  }
+
+  .gitChecks {
+    padding-left: 1em;
+  }
+}
+
+@media (min-width: map.get(layout.$breakpoints, scaleUpUI)) {
+  .gitChecksLayout {
+    justify-self: end;
+
+    width: 75%;
+  }
+
+  .gitChecks {
+    padding-bottom: .5em;
+  }
+}
