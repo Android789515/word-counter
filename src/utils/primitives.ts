@@ -21,4 +21,10 @@ export const Num = {
         // Radix not supported.
         return number.toString();
     }
-}
+};
+
+export const Bool = {
+    doesPass(boolean: boolean) {
+        return boolean;
+    }
+};
