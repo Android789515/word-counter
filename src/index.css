@@ -34,3 +34,9 @@ textarea {
   /* For firefox */
   min-width: 0;
 }
+
+button {
+  font: inherit;
+
+  cursor: pointer;
+}
