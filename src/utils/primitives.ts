@@ -1,4 +1,4 @@
-export const String = {
+export const Str = {
     capitalize(string: string) {
         const capitalizedFirstLetter = string[0].toUpperCase();
 
@@ -9,7 +9,7 @@ export const String = {
     }
 }
 
-export const Number = {
+export const Num = {
     toString(number: number) {
         // Radix not supported.
         return number.toString();
