@@ -1,0 +1,15 @@
+@use 'sass:map';
+
+@use 'components/layout';
+
+.infoSection {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 2em;
+}
+
+@media (min-width: map.get(layout.$breakpoints, limitMetricsSize)) {
+  .info-section {
+    grid-template-columns: max-content auto;
+  }
+}
