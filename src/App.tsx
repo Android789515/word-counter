@@ -18,8 +18,6 @@ const App = () => {
 
     const [ userInput, updateUserInput ] = useState<FormText>('');
 
-    const metrics = getMetrics(userInput);
-
     return (
         <div className={`
             ${styles.app}
@@ -30,11 +28,11 @@ const App = () => {
             <Layout>
                 <InfoSection>
                     <Metrics
-                        metrics={metrics}
+                        metrics={getMetrics(userInput)}
                     />
 
                     <GitChecks
-                        metrics={metrics}
+                        userInput={userInput}
                     />
                 </InfoSection>
 
