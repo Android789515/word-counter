@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+@use 'mixins';
 @use 'components/layout';
 
 .gitChecksLayout {
@@ -7,6 +8,8 @@
 }
 
 .gitChecks {
+  @include mixins.unStyledList;
+
   display: grid;
 }
 
