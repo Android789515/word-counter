@@ -1,7 +1,8 @@
 import type { MetricsData } from 'features/metrics';
 
-import { CheckMessageButton } from './components/check-message-button';
 import useToggleShow from './useToggleShow';
+import { CheckMessageButton } from './components/check-message-button';
+import { GitMessageCheck } from './components/git-message-check';
 
 import styles from './GitChecks.module.scss';
 
@@ -19,9 +20,20 @@ export const GitChecks = ({ metrics }: Props) => {
             />
 
             <ul className={isShown ? styles.gitChecks : styles.gitChecksHidden}>
-                <li>Title</li>
-                <li>Blank Line</li>
-                <li>Body Text</li>
+                <GitMessageCheck
+                    name={'Title'}
+                    didPass={false}
+                />
+
+                <GitMessageCheck
+                    name={'Blank Line'}
+                    didPass={false}
+                />
+
+                <GitMessageCheck
+                    name={'Body Text'}
+                    didPass={false}
+                />
             </ul>
         </div>
     );
