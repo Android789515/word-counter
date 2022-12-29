@@ -14,6 +14,14 @@
   width: 1em;
 }
 
+.pass {
+  filter: invert(77%) sepia(85%) saturate(2626%) hue-rotate(58deg) brightness(99%) contrast(101%);
+}
+
+.fail {
+  filter: invert(16%) sepia(79%) saturate(3597%) hue-rotate(349deg) brightness(102%) contrast(105%);
+}
+
 @media (min-width: map.get(layout.$breakpoints, scaleUpUI)) {
   .gitMessageCheck {
     max-width: 75%;

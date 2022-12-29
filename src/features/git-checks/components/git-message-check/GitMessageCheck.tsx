@@ -1,5 +1,5 @@
-import passIcon from './assets/icon-set-1/check1.svg';
-import failIcon from './assets/icon-set-1/x1.svg';
+import passIcon from 'features/git-checks/components/git-message-check/assets/pass.svg';
+import failIcon from 'features/git-checks/components/git-message-check/assets/fail.svg';
 import styles from './GitMessageCheck.module.scss';
 
 interface Props {
@@ -14,7 +14,10 @@ export const GitMessageCheck = ({ name, didPass }: Props) => {
             <img
                 src={didPass ? passIcon : failIcon}
                 alt={'Pass / Fail Indicator'}
-                className={styles.passFailIndicator}
+                className={`
+                    ${styles.passFailIndicator}
+                    ${didPass ? styles.pass : styles.fail}
+                `}
             />
         </li>
     );
