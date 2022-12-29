@@ -1,6 +1,6 @@
 export const Str = {
     capitalize(string: string) {
-        const capitalizedFirstLetter = string[0].toUpperCase();
+        const capitalizedFirstLetter = string.charAt(0).toUpperCase();
 
         return capitalizedFirstLetter + string.slice(1);
     },
