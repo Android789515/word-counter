@@ -1,0 +1,21 @@
+@use 'sass:map';
+
+@use 'components/layout';
+
+.gitMessageCheck {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  max-width: 65%;
+}
+
+.passFailIndicator {
+  width: 1em;
+}
+
+@media (min-width: map.get(layout.$breakpoints, scaleUpUI)) {
+  .gitMessageCheck {
+    max-width: 75%;
+  }
+}
