@@ -1,8 +1,18 @@
 .checkMessageButton {
   font-size: 1rem;
 
+  // Puts this on top of
+  // the git checks, so
+  // it's clickable
+  position: relative;
+  z-index: 0;
+
+  grid-row: 1;
+  grid-column: 2;
   justify-self: end;
   align-self: start;
 
   max-width: max-content;
+
+  margin: -2px -2px 0 0;
 }
