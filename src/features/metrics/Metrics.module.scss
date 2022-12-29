@@ -1,17 +1,11 @@
 @use 'sass:map';
 
+@use 'mixins';
 @use 'components/layout';
 
-// Un-styling
 .metrics {
-  list-style: none;
+  @include mixins.unStyledList;
 
-  padding: 0;
-
-  margin: 0;
-}
-
-.metrics {
   font-variant-numeric: tabular-nums;
 
   display: grid;
