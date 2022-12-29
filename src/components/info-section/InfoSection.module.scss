@@ -9,7 +9,7 @@
 }
 
 @media (min-width: map.get(layout.$breakpoints, limitMetricsSize)) {
-  .info-section {
+  .infoSection {
     grid-template-columns: max-content auto;
   }
 }
