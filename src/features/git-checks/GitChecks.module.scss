@@ -3,7 +3,8 @@
 @use 'mixins';
 @use 'components/layout';
 
-.gitChecksLayout {
+.gitChecksLayout,
+.gitChecksHidden {
   display: none;
 }
 
