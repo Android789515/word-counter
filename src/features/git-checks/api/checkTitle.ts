@@ -26,11 +26,11 @@ const doesPassConventionChecks = (titleLine: string) => {
 
         if (hasValidHeaderType) {
             const [ , restOfTitle ] = titleLine.split(type);
-            const [ scope, summary ] = restOfTitle.split(':');
+            const [ scope, summary ] = restOfTitle.split(':').map(Str.trim);
 
-            if (summary) {
+            if (summary && doesPassInitialChecks(summary)) {
                 // Removes the parenthesis if there is no scope
-                const convention = `${scope}: ${summary.trim()}`.replace('()', '');
+                const convention = `${scope}: ${summary}`.replace('()', '');
 
                 return restOfTitle === convention;
             }

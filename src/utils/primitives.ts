@@ -13,6 +13,9 @@ export const Str = {
     },
     isNotEmpty(string: string) {
         return string !== '';
+    },
+    trim(string: string) {
+        return string.trim();
     }
 };
 
