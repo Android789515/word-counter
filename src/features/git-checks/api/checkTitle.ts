@@ -24,11 +24,11 @@ const doesPassConventionChecks = (titleLine: string) => {
     return Object.values(MessageHeaderTypes).some(type => {
         const hasValidHeaderType = titleLine.startsWith(type);
 
-        if (hasValidHeaderType) {
+        if (Str.isLowerCase(titleLine) && hasValidHeaderType) {
             const [ , restOfTitle ] = titleLine.split(type);
             const [ scope, summary ] = restOfTitle.split(':').map(Str.trim);
 
-            if (summary && doesPassInitialChecks(summary)) {
+            if (summary) {
                 // Removes the parenthesis if there is no scope
                 const convention = `${scope}: ${summary}`.replace('()', '');
 

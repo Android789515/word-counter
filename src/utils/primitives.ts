@@ -1,4 +1,7 @@
 export const Str = {
+    isLowerCase(string: string) {
+        return string === string.toLowerCase();
+    },
     capitalize(string: string) {
         const capitalizedFirstLetter = string.charAt(0).toUpperCase();
 
