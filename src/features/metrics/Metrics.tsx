@@ -1,4 +1,4 @@
-import { Num as Num, Str } from 'utils/primitives';
+import { Num, Str } from 'utils/primitives';
 
 import type { MetricsData } from './metricTypes';
 import { Metric } from './metric';
