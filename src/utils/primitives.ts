@@ -8,7 +8,7 @@ export const Str = {
         const firstLetter = string.charAt(0);
         return (
             this.isNotEmpty(string)
-            && firstLetter === firstLetter.toUpperCase()
+            && string.startsWith(firstLetter.toUpperCase())
         );
     },
     isNotEmpty(string: string) {
