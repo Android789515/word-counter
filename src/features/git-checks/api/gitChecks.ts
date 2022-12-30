@@ -1,13 +1,15 @@
 import type { FormText } from 'components/form';
 import type { GitMessageTests, TestNames } from '../gitCheckTypes';
 import { checkTitle } from './checkTitle';
+import { checkForBlankLine } from './checkForBlankLine';
 
 export const checkCommitMessage = (userInput: FormText): GitMessageTests => {
     const didTitlePass = checkTitle(userInput);
+    const isBlankLinePresent = checkForBlankLine(userInput);
 
     return {
         title: didTitlePass,
-        blankLine: false,
+        blankLine: isBlankLinePresent,
         bodyText: false
     };
 };
