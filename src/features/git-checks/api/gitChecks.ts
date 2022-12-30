@@ -9,7 +9,7 @@ const checkTitle = (userInput: FormText) => {
     const passesInitialChecks = Object.values({
         isNotEmpty: Str.isNotEmpty(titleLine),
         hasNoPeriod: titleLine.at(-1)! !== '.',
-        is50LettersOrLess: titleLine.length <= maxTitleLength,
+        is50LettersOrFewer: titleLine.length <= maxTitleLength,
         startsWithLetter: /[a-zA-Z]/.test(titleLine.charAt(0))
     }).every(Bool.doesPass);
 
