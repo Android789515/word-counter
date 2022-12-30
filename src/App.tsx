@@ -1,46 +1,23 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
-import type { FormText } from 'components/form';
 import { themeContext } from 'providers/theme-provider';
 
 import { AppHeader } from 'components/app-header';
-import { Layout } from 'components/layout';
-import { InfoSection } from 'components/info-section';
-
-import { getMetrics, Metrics } from 'features/metrics';
-import { GitChecks } from 'features/git-checks';
-import { TextEnter } from 'features/text-enter';
+import { AppMain } from 'components/app-main';
 
 import styles from './App.module.scss';
 
 const App = () => {
     const { isDarkTheme } = useContext(themeContext);
 
-    const [ userInput, updateUserInput ] = useState<FormText>('');
-
     return (
         <div className={`
             ${styles.app}
             ${isDarkTheme() ? styles.appDark : ''}
         `}>
-            <AppHeader/>
+            <AppHeader />
 
-            <Layout>
-                <InfoSection>
-                    <Metrics
-                        metrics={getMetrics(userInput)}
-                    />
-
-                    <GitChecks
-                        userInput={userInput}
-                    />
-                </InfoSection>
-
-                <TextEnter
-                    userInput={userInput}
-                    updateUserInput={updateUserInput}
-                />
-            </Layout>
+            <AppMain />
         </div>
     );
 };
