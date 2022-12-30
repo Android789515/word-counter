@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: flex-end;
 
-  max-width: 65%;
+  max-width: 58%;
 }
 
 .passFailIndicator {
@@ -25,6 +25,6 @@
 
 @media (min-width: map.get(layout.$breakpoints, scaleUpUI)) {
   .gitMessageCheck {
-    max-width: 75%;
+    max-width: 65%;
   }
 }

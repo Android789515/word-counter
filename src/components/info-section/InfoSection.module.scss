@@ -5,7 +5,7 @@
 .infoSection {
   display: grid;
   grid-auto-flow: column;
-  grid-column-gap: 2em;
+  grid-column-gap: 1.5em;
 }
 
 @media (min-width: map.get(layout.$breakpoints, limitMetricsSize)) {
