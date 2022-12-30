@@ -10,7 +10,7 @@ export const CheckMessageButton = ({ onClick }: Props) => {
             className={styles.checkMessageButton}
             onClick={onClick}
         >
-            Check
+            Git-Check
         </button>
     );
 };
