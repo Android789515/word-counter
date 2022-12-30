@@ -16,6 +16,18 @@ interface Props {
 export const GitChecks = ({ userInput }: Props) => {
     const { isShown, toggleShown } = useToggleShow();
 
+    const gitMessageChecks = Object.entries(checkCommitMessage(userInput)) as Entries<GitMessageTests>;
+
+    const GitMessageChecks = gitMessageChecks.map(([ testName, test ], index) => {
+        return (
+            <GitMessageCheck
+                key={index}
+                name={getTestNames(testName)}
+                didPass={test}
+            />
+        );
+    });
+
     return (
         <div className={styles.gitChecksLayout}>
             <CheckMessageButton
@@ -23,20 +35,7 @@ export const GitChecks = ({ userInput }: Props) => {
             />
 
             <ul className={isShown ? styles.gitChecks : styles.gitChecksHidden}>
-                <GitMessageCheck
-                    name={'Title'}
-                    didPass={false}
-                />
-
-                <GitMessageCheck
-                    name={'Blank Line'}
-                    didPass={false}
-                />
-
-                <GitMessageCheck
-                    name={'Body Text'}
-                    didPass={false}
-                />
+                {GitMessageChecks}
             </ul>
         </div>
     );
