@@ -7,7 +7,7 @@ const doesPassInitialChecks = (titleLine: string) => {
 
     return Object.values({
         isNotEmpty: Str.isNotEmpty(titleLine),
-        hasNoPeriod: titleLine.at(-1)! !== '.',
+        hasNoPeriod: !titleLine.endsWith('.'),
 
         is50LettersOrFewer: titleLine.length <= maxTitleLength,
         startsWithLetter: /[a-zA-Z]/.test(titleLine.charAt(0))
