@@ -19,6 +19,10 @@
   max-width: max-content;
 
   background: map.get(color-palette.$colors, 'dimWhite');
+  border: solid 1px;
+  border-radius: .25em;
+}
+
+.checkMessageButtonDark {
   border: none;
-  border-radius: 2px;
 }
