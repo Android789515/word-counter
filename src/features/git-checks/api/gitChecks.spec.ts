@@ -46,4 +46,27 @@ describe('GitChecks', () => {
 
         expect(blankLineFail).toEqual(false);
     });
+
+    it('Validates that the body text wraps at 72 characters', () => {
+        const { body: bodyPass } = checkCommitMessage(fakeCommitMessage({
+            title: 'Create app component',
+            lineOfSpace: true,
+            body: 'Changes that affect the build system or external dependencies (example '
+                + '\n'
+                + 'scopes: gulp, broccoli, npm)'
+        }));
+
+        expect(bodyPass).toEqual(true);
+
+        const { body: bodyFail } = checkCommitMessage(fakeCommitMessage({
+            title: 'Create app component',
+            lineOfSpace: true,
+            // Wrapped at 85 characters
+            body: 'Changes that affect the build system or external dependencies (example scopes: gulp, '
+                + '\n'
+                + 'broccoli, npm)'
+        }));
+
+        expect(bodyFail).toEqual(false);
+    });
 });
