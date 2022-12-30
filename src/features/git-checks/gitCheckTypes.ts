@@ -1,11 +1,11 @@
-export type TestNames = 'title' | 'blankLine' | 'bodyText';
+export type TestNames = 'title' | 'blankLine' | 'body';
 
 type GitMessageTestResult = boolean;
 
 export interface GitMessageTests {
     title: GitMessageTestResult;
     blankLine: GitMessageTestResult;
-    bodyText: GitMessageTestResult;
+    body: GitMessageTestResult;
 }
 
 export enum MessageHeaderTypes {
