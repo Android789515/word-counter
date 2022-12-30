@@ -1,5 +1,5 @@
 import type { FormText } from 'components/form';
-import type { GitMessageTests } from '../gitCheckTypes';
+import { GitMessageTests, TestNames } from '../gitCheckTypes';
 import { Bool, Str } from 'utils/primitives';
 
 const checkTitle = (userInput: FormText) => {
@@ -32,4 +32,14 @@ export const checkCommitMessage = (userInput: FormText): GitMessageTests => {
         blankLine: false,
         bodyText: false
     };
+};
+
+export const getTestNames = (name: TestNames) => {
+    const registry = {
+        title: 'Title',
+        blankLine: 'Blank Line',
+        bodyText: 'Body Text'
+    };
+
+    return registry[name];
 };
