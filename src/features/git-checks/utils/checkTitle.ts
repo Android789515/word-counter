@@ -1,23 +1,25 @@
 import type { FormText } from 'components/form';
 import { MessageHeaderTypes } from '../gitCheckTypes';
-import { Bool, Str } from 'utils/primitives';
+import { Str } from 'utils/primitives';
+
+import { testCases } from './helpers';
 
 const doesPassInitialChecks = (titleLine: string) => {
-    const maxTitleLength = 50;
+   const maxTitleLength = 50;
 
-    return Object.values({
-        isNotEmpty: Str.isNotEmpty(titleLine),
-        hasNoPeriod: !titleLine.endsWith('.'),
+   return testCases({
+      isNotEmpty: Str.isNotEmpty(titleLine),
+      hasNoPeriod: !titleLine.endsWith('.'),
 
-        is50LettersOrFewer: titleLine.length <= maxTitleLength,
-        startsWithLetter: /[a-zA-Z]/.test(titleLine.charAt(0))
-    }).every(Bool.doesPass);
+      is50LettersOrFewer: titleLine.length <= maxTitleLength,
+      startsWithLetter: /[a-zA-Z]/.test(titleLine.charAt(0)),
+   });
 };
 
 const doesPassBasicChecks = (titleLine: string) => {
-    return Object.values({
-        isCapitalized: Str.isCapitalized(titleLine),
-    }).every(Bool.doesPass);
+   return testCases({
+      isCapitalized: Str.isCapitalized(titleLine),
+   });
 };
 
 const doesPassConventionChecks = (titleLine: string) => {
