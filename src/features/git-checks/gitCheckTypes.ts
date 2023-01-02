@@ -8,7 +8,7 @@ export interface GitMessageTests {
     body: GitMessageTestResult;
 }
 
-export enum MessageHeaderTypes {
+export enum GitHeaderTypes {
     build = 'build',
     chore = 'chore',
     ci = 'ci',
