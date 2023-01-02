@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
+
 import type { FormText } from 'components/form';
 import type { Entries } from 'types/objectTypes';
 import type { GitMessageTests } from './gitCheckTypes';
 
+import useSavePreferences from 'hooks/useSavePreferences';
 import useToggleShow from './useToggleShow';
 import { checkCommitMessage, getTestNames } from './utils/gitChecks';
 import { CheckMessageButton } from './components/check-message-button';
@@ -14,7 +17,14 @@ interface Props {
 }
 
 export const GitChecks = ({ userInput }: Props) => {
-    const { isShown, toggleShown } = useToggleShow();
+    const isGitChecksShownKey = 'wordCounter/gitChecksShown';
+    const { save, load } = useSavePreferences<boolean>(isGitChecksShownKey);
+
+    const { isShown, toggleShown } = useToggleShow(load() || false);
+
+    useEffect(() => {
+        save(isShown);
+    }, [isShown, save]);
 
     const gitMessageChecks = Object.entries(checkCommitMessage(userInput)) as Entries<GitMessageTests>;
 
