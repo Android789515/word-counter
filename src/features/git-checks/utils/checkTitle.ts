@@ -7,7 +7,7 @@ import { Str } from 'utils/primitives';
 import { testCases } from './helpers';
 
 const doesPassInitialChecks = (titleLine: string) => {
-   const maxTitleLength = 50;
+   const maxTitleLength = 72;
 
    return testCases({
       isNotEmpty: Str.isNotEmpty(titleLine),
