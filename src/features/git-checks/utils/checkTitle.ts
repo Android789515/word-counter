@@ -1,7 +1,7 @@
 import type { FormText } from 'components/form';
-import { MessageHeaderTypes } from '../gitCheckTypes';
+import { regexMatchAny } from 'utils/regex';
 import { Str } from 'utils/primitives';
-
+import { GitHeaderTypes } from '../gitCheckTypes';
 import { testCases } from './helpers';
 
 const doesPassInitialChecks = (titleLine: string) => {
@@ -23,23 +23,14 @@ const doesPassBasicChecks = (titleLine: string) => {
 };
 
 const doesPassConventionChecks = (titleLine: string) => {
-    return Object.values(MessageHeaderTypes).some(type => {
-        const hasValidHeaderType = titleLine.startsWith(type);
+    const headerTypes = regexMatchAny(GitHeaderTypes).source;
 
-        if (Str.isLowerCase(titleLine) && hasValidHeaderType) {
-            const [ , restOfTitle ] = titleLine.split(type);
-            const [ scope, summary ] = restOfTitle.split(':').map(Str.trim);
+    const scopeConvention = /\(.*[^A-Z()]\)/.source;
+    const summaryConvention = /[^A-Z]{1,50}/.source;
 
-            if (summary) {
-                // Removes the parenthesis if there is no scope
-                const convention = `${scope}: ${summary}`.replace('()', '');
+    const convention = new RegExp(`^${headerTypes}${scopeConvention}: ${summaryConvention}$`);
 
-                return restOfTitle === convention;
-            }
-        }
-
-        return false;
-    });
+    return convention.test(titleLine);
 };
 
 export const checkTitle = (userInput: FormText) => {
