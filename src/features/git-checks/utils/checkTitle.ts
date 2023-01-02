@@ -1,7 +1,9 @@
 import type { FormText } from 'components/form';
+import { GitHeaderTypes } from '../gitCheckTypes';
+
 import { regexMatchAny } from 'utils/regex';
 import { Str } from 'utils/primitives';
-import { GitHeaderTypes } from '../gitCheckTypes';
+
 import { testCases } from './helpers';
 
 const doesPassInitialChecks = (titleLine: string) => {
