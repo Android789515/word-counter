@@ -1,4 +1,6 @@
-import { ReactNode, createContext, useState } from 'react';
+import { ReactNode, createContext, useState, useEffect } from 'react';
+
+import useSavePreferences from 'hooks/useSavePreferences';
 
 import { ThemeContext, Themes } from './themeTypes';
 import { ThemeIcon } from 'components/theme-icon';
@@ -15,7 +17,14 @@ interface Props {
 }
 
 const ThemeProvider = ({ children }: Props) => {
-    const [ theme, setTheme ] = useState<Themes>(Themes.light);
+    const themeKey = 'wordCounter/theme';
+    const { save: saveTheme, load: loadTheme } = useSavePreferences<Themes>(themeKey);
+
+    const [ theme, setTheme ] = useState<Themes>(loadTheme() || Themes.light);
+
+    useEffect(() => {
+        saveTheme(theme)
+    }, [theme, saveTheme]);
 
     const isLightTheme = () => theme === Themes.light;
     const isDarkTheme = () => theme === Themes.dark;
