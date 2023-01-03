@@ -23,7 +23,7 @@ const ThemeProvider = ({ children }: Props) => {
     const [ theme, setTheme ] = useState<Themes>(loadTheme() || Themes.light);
 
     useEffect(() => {
-        saveTheme(theme)
+        saveTheme(theme);
     }, [theme, saveTheme]);
 
     const isLightTheme = () => theme === Themes.light;
