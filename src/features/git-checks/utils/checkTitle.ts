@@ -27,7 +27,7 @@ const doesPassBasicChecks = (titleLine: string) => {
 const doesPassConventionChecks = (titleLine: string) => {
     const headerTypes = regexMatchAny(GitHeaderTypes).source;
 
-    const scopeConvention = /\(.*[^A-Z()]\)/.source;
+    const scopeConvention = /(?:\(.*[^A-Z()]\))?/.source;
     const summaryConvention = /[^A-Z]{1,50}/.source;
 
     const convention = new RegExp(`^${headerTypes}${scopeConvention}: ${summaryConvention}$`);
